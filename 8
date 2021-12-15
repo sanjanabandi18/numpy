@@ -1,0 +1,74 @@
+Experiment No:8: NumPy Linear Algebra
+Write a NumPy program using Linear Algebra – inner, outer, cross, linalg.det, linalg.norm, inv, linalg.eig
+8.a)To compute the inner, outer, cross product of two given vectors.
+Aim: To compute the inner, outer, cross product of two given vectors.
+Description:
+Inner():
+numpy.inner(arr1, arr2): Computes the inner product of two arrays.
+Syntax:
+numpy.inner(arr1, arr2)
+outer():
+numpy.outer() function compute the outer product of two vectors.
+Syntax:
+numpy.outer(a, b, out = None)
+cross():
+Return the cross product of two (arrays of) vectors.
+Syntax: numpy.cross(a, b, axisa=-1, axisb=-1, axisc=-1, axis=None
+
+Program:
+import numpy as np
+vector1=np.array([[1,2],[3,4]])
+vector2=np.array([[5,6],[7,8]])
+print("vector1:")
+print(vector1)
+print("vector2")
+print(vector2)
+print("inner product of the vectors")
+print(np.inner(vector1,vector2))
+print("outer product of the vectors")
+print(np.outer(vector1,vector2))
+print("cross product of the vectors")
+print(np.cross(vector1,vector2))
+
+output:
+vector1:
+[[1 2]
+ [3 4]]
+vector2
+[[5 6]
+ [7 8]]
+inner product of the vectors
+[[17 23]
+ [39 53]]
+outer product of the vectors
+[[ 5  6  7  8]
+ [10 12 14 16]
+ [15 18 21 24]
+ [20 24 28 32]]
+cross product of the vectors
+[-4 -4]
+
+
+8.b) To compute the determinant of a given square array.
+Aim: To compute the determinant of a given square array.
+Description:
+numpy.linalg.det() will take the given square array as a parameter and return the determinant of that.
+Syntax: numpy.linalg.det() 
+Parameter: An square array. 
+Return: The determinant of that square array.
+
+Program:
+import numpy as np
+from numpy import linalg as la
+array=np.arange(1,5).reshape(2,2)
+print("array:")
+print(array)
+print(np.linalg.det(array))
+
+output:
+array:
+[[1 2]
+ [3 4]]
+-2.0000000000000004
+
+
