@@ -1,0 +1,160 @@
+Exercise 5: NumPy Matrix - I
+Write a NumPy program using NumPy Matrix – shape, reshape, identity or eye, ones, zeros, nditer, diag, sum
+5.a)To find the number of rows and columns of a given matrix using Num
+
+Program:
+
+import numpy as np
+#creating matrix using matrix method
+matrix1=np.matrix('1 2;3 4')
+print("matrix1")
+print(matrix1)
+print("no of rows and columns")
+matrix1.shape
+#creating matrix using reshape method
+matrix2=np.arange(1,11).reshape((2,5))
+print("matrix2")
+ print(matrix2)
+print("no of rows and columns")
+matrix2.shape
+
+output:
+
+matrix1
+[[1 2]
+ [3 4]]
+no of rows and columns
+ (2, 2)
+matrix2
+[[ 1  2  3  4  5]
+ [ 6  7  8  9 10]]
+no of rows and columns
+ (2, 5)
+
+5.b)To display the shape of array and create a new shape to an array without changing its data.
+
+Program:
+
+arr1=np.array([1,6,7,3,5,6,7,9])
+arr2=np.array([[1,2,3],[4,5,6]])
+#finding the shape of array
+print("the shape of arr1:")
+print(arr1.shape)
+print("the shape of arr2:")
+print(arr2.shape)
+#reshaping the array size
+arr3=np.reshape(arr1,(2,4))
+arr4=np.reshape(arr2,(3,2))
+print(" arr1 reshaped into 2x4") 
+print(arr3)
+print("arr2 reshaped into 3x2")
+print(arr4)
+
+Output:
+
+the shape of arr1:
+(8,)
+the shape of arr2:
+(2, 3)
+ arr1 reshaped into 2x4
+[[1 6 7 3]
+ [5 6 7 9]]
+arr2 reshaped into 3x2
+[[1 2]
+ [3 4]
+ [5 6]]
+
+5.c)To create a 3x3 identity matrix using identity and eye. State the difference. 
+
+Program:
+
+#creating 3x3 using identity method
+matrix1=np.identity(3)
+print("3x3 matrix using identity method")
+print(matrix1)
+#creating 3x3 identity matrix using eye method
+matrix2=np.eye(3)
+print("3x3 matrix using eye method")
+print(matrix2)
+
+output:
+
+3x3 matrix using identity method
+[[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+3x3 matrix using eye method
+[[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+
+5.d)To create a 10x10 matrix, in which the elements on the borders will be equal to 1, and inside
+
+Program:
+
+#creating a 10x10 matrix identity matrix
+matrix=np.ones((10,10))
+#making the inside elements 0
+matrix[1:-1,1:-1]=0
+print("10x10 matrix with border elements as 1 and inside elements as 0")
+print(matrix)
+
+output:
+
+10x10 matrix with border elements as 1 and inside elements as 0
+[[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]]
+
+5.e)To create a 5x5 zero matrix with elements on the main diagonal equal to 1, 2, 3, 4, 5
+
+Program:
+
+#creating a 5x5 diagonal matrix using diag method
+matrix=np.diag([1,2,3,4,5])
+print("5x5 diagonal matrix:")
+print(matrix)
+
+output:
+
+5x5 diagonal matrix:
+[[1 0 0 0 0]
+ [0 2 0 0 0]
+ [0 0 3 0 0]
+ [0 0 0 4 0]
+ [0 0 0 0 5]]
+
+5.f)To compute sum of all elements, sum of each column and sum of each row of a given array.
+
+Program:
+
+array=np.array([[1,2,3],[4,5,6]])
+print("array:")
+print(array)
+print("sum of all the elements in the array")
+print(np.sum(array))
+#axis=0 refers to columns
+print("sum of all elements in each column")
+print(np.sum(array,axis=0))
+#axis=1 refers to rows
+print("sum of all elements in each row")
+print(np.sum(array,axis=1))
+
+output:
+
+array:
+[[1 2 3]
+ [4 5 6]]
+sum of all the elements in the array
+21
+sum of all elements in each column
+[5 7 9]
+sum of all elements in each row
+[ 6 15]
