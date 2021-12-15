@@ -1,0 +1,152 @@
+Experiment No: 3
+3)Write a Numpy program using NumPy methods -asarray, append, size, itemsize, nbytes, unique, union id ,tile.
+(a)To convert a list and tuple into arrays.
+description:
+For converting a list and tuple into an array we use asarray() function in NumPy.
+asarray():
+asarray() function is used when we want to convert input to an array. Input can be lists, lists of tuples, tuples, tuples of tuples, tuples of lists and arrays.
+Syntax:
+numpy.asarray(arr, dtype=None, order=None)
+Program:
+import numpy as np
+my_list = [1, 2, 3, 4, 5, 6, 7, 8]
+print (my_list)
+print(“List to array: “)
+print(np.asarray(my_list))
+my_tuple = ([8, 4, 6], [1, 2, 3])
+print (my_tuple)
+print(“Tuple to array: “)
+sarray(my_tuple))
+Output:
+[1, 2, 3, 4, 5, 6, 7, 8]
+List to array: 
+[1 2 3 4 5 6 7 8]
+([8, 4, 6], [1, 2, 3])
+Tuple to array: 
+[[8 4 6]
+ [1 2 3]]
+
+
+3.b)To append values to the end of an array
+Aim: To append values to the end of an array
+Description:
+append():
+The append() function is used to append values to the end of an given array. Values are appended to a copy of this array.
+These values are appended to a copy of arr. It must be of the correct shape (the same shape as arr, excluding axis).
+Syntax:
+numpy.append(array, values, axis = None)
+
+Program:
+import numpy as np
+array=[1,2,3,4,5]
+print(array)
+array=np.append(array,[6,7,8,9,10,11,12])
+print(array)
+
+Output:
+[1, 2, 3, 4, 5]
+[ 1  2  3  4  5  6  7  8  9 10 11 12]
+
+
+ 3.c)To find the number of elements of an array, length of one array element in bytes and total bytes consumed by the elements.
+Aim: To find the number of elements of an array, length of one array element in bytes and total bytes consumed by the elements.
+Description:
+Size():
+In Python, numpy.size() function count the number of elements along a given axis.
+Syntax:  numpy.size(arr, axis=None)
+Itemsize():
+Numpy.ndarray.itemsize() function return the length of one array element in bytes.
+E.g:  for this NumPy array [ [3,4,6], [0,8,1]], itemsize will be 8, because this array consists of integers and size of integer (in bytes) is 8 bytes.
+Syntax:numpy.ndarray.itemsize(arr)
+Nbytes():
+Nbytes() function return total bytes consumed by the elements of the array.
+Syntax: numpy.ndarray.nbytes(arr)
+Program:
+import numpy as np
+array=np.array( [1,2,3,4,5] )
+print(array)
+print(“size is:”,array.size)
+print (“Length is:”,array.itemsize)
+print (“Total bytes are:”,array.nbytes)
+Output:
+[1 2 3 4 5]
+Size is: 5
+Length is: 8
+Total bytes are: 40
+
+
+3.d)To get  the unique elements of an array.
+Aim: To get  the unique elements of an array.
+Description:
+The unique() function is used to find the unique elements of an array.Returns the sorted unique elements of an array.
+Syntax: 
+numpy.unique(filt, trim=’fb’)
+
+Program:
+import numpy as np
+array=np.array( [ 10,11,12,20,23,12,11,25,45,10,45,70] )
+print (array)
+print (“Unique sorted list is:”)
+print(np.unique(array))
+
+Output:
+
+[10 11 12 20 23 12 11 25 45 10 45 70]
+Unique sorted list is:
+[10 11 12 20 23 25 45 70]
+
+3.e)To find the union of two arrays .
+ Aim: To find the union of two arrays .
+Description:
+Union id():
+Union will return the unique,sorted array of values that are in either of the two input arrays.
+Syntax :  numpy.union1d(arr1, arr2)
+
+Program:
+import numpy as np
+arr1=np.array([ 10,12,14,16,17,18,25])
+arr2=np.array([11,12,13,14,15,16,17,18])
+print (arr1)
+print(arr2)
+print(“union of two arrays:”)
+print(np.union1d(arr1,arr2))
+
+Output:
+[10 12 14 16 17 18 25]
+[11 12 13 14 15 16 17 18]
+Union of two arrays:
+[10 11 12 13 14 15 16 17 18 25]
+
+3.f)To construct an array by repeating its elements.
+Aim: To construct an array by repeating its elements.
+Description:
+tile():
+The numpy.tile() function constructs a new array by repeating array – ‘arr’, the number of times we want to repeat as per repetitions. The resulted array will have dimensions max(arr.ndim, repetitions) where, repetitions is the length of repetitions.
+If arr.ndim> repetitions, reps is promoted to arr.ndim by pre-pending 1’s to it.
+If arr.ndim< repetitions, reps is promoted to arr.ndim by pre-pending new axis.
+Syntax :numpy.tile(arr, repetitions)
+
+Program:
+import numpy as np
+a=np.array([10,20,30,40,50])
+print(a)
+print(“An array with repeated elements:”)
+print(np.tile(a,5))
+
+Output:
+[10 20 30 40 50]
+An array with repeated elements:
+[10 20 30 40 50 10 20 30 40 50 10 20 30 40 50 10 20 30 40 50 10 20 30 40  50]
+
+
+
+
+
+
+
+
+
+
+
+
+ 
